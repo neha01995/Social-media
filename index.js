@@ -7,6 +7,8 @@ const path=require('path');
 const app=express();
 // app.createserver(http);
 
+app.use('/', require('./routes/index'));
+
 
 
 
