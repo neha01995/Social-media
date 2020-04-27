@@ -1,0 +1,23 @@
+[33mcommit 49967937d595c835bf5e9591b7354c2283c4a936[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Neha singla <nehasingla7180@gmail.com>
+Date:   Mon Apr 27 10:58:48 2020 +0530
+
+    setup static files access for layout pages
+
+[33mcommit 6d0f8b8d846e4ee8862e904ae14fba28149ad851[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Neha singla <nehasingla7180@gmail.com>
+Date:   Sun Apr 26 22:04:18 2020 +0530
+
+    add view successffullyy
+
+[33mcommit 5f63c7865167dfaf08d5b64da8d07acb1da32e28[m
+Author: Neha Singla <nehasingla7180@gmail.com>
+Date:   Sun Apr 26 19:23:58 2020 +0530
+
+    add controllers and routes
+
+[33mcommit 6b2f22d3f3b66bd44acb87d5d4f48f2727c7d1f7[m
+Author: Neha Singla <nehasingla7180@gmail.com>
+Date:   Sun Apr 26 18:32:55 2020 +0530
+
+    first:create the directory structure and folder
