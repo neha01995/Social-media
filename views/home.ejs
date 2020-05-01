@@ -1,4 +1,34 @@
 
         <h1> codeial/ <%= title%>  </h1>
 
+        <section id='feed-post'>
+                <h1> Posts</h1>
+                <form action="/posts/create" id="new-post-form "method="Post">
+                        <textarea name="content" cols="50" rows="10" placeholder="Type here....."></textarea>
+                        <input type="submit" value="Post">
+                    
+                    </form>
+
+
+        <div id="posts-list-container">
+                <ul>
+                    <% for (post of posts) {%>
+                        <li>
+                            <p>
+                                <%= post.content %>
+                                <br>
+                                <small>
+                                        <%= post.user.name %>
+                                </small>
+
+                            </p>
+              
+                        </li>
+
+                    <%}%>
+                </ul>
+
+        </div>
+        </section>
+
  
