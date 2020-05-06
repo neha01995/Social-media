@@ -38,6 +38,11 @@ app.use(express.urlencoded());
 app.use(cookieParser());
 app.use(express.static('assets'));
 
+// make the uploaded path to the browser (avatar photos path to upload on the browser)
+app.use('/uploads',express.static(__dirname +'/uploads'));
+
+
+
 app.use(expressLayouts);
 app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);

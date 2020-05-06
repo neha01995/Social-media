@@ -1,13 +1,11 @@
-
-        <h1> codeial/ Profile  
-
-        </h1>
+        <img src="<%= user.avatar %>" alt="<%= user.name%>" width="100">
 
         <% if (user.id==profile_user.id) {%>
-                <form action="/users/update/<%= profile_user.id %>" method="Post">
+                <form action="/users/update/<%= profile_user.id %>" enctype="multipart/form-data" method="Post">
                         <input type="text" name="name" placeholder="Your Name" value="<%= profile_user.name %>"   required>
                         <input type="email" name="email" placeholder="xyz@gmail.com"  value="<%= profile_user.email %>" required> 
                         
+                        <input type="file" name="avatar" placeholder="Upload Profile Picture">
                         <input type="submit" value="Update">
                     
                     </form>
