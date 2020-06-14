@@ -1,26 +1,61 @@
-        <img src="<%= user.avatar %>" alt="<%= user.name%>" width="100">
+ 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/user_profile.css">
+    <script src="https://kit.fontawesome.com/38d263e213.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+        
+      <h1>
+        Profile Page <i class="fa fa-user" aria-hidden="true"></i>
+      </h1>
+
+   <h1 style="text-align:center; font-size :300%;"><h1>Profile Page <i class="fa fa-user" aria-hidden="true"></i></h1> 
+      
+  
+        <div class="row">
+          <div class="column">
+                <img class="profile-image" src="<%= user.avatar %>" alt="<%= user.name%>" width="400">
+          </div>
+    
+      <div class="column sign-up-form">  
 
         <% if (user.id==profile_user.id) {%>
+
+
                 <form action="/users/update/<%= profile_user.id %>" enctype="multipart/form-data" method="Post">
-                        <input type="text" name="name" placeholder="Your Name" value="<%= profile_user.name %>"   required>
-                        <input type="email" name="email" placeholder="xyz@gmail.com"  value="<%= profile_user.email %>" required> 
-                        
-                        <input type="file" name="avatar" placeholder="Upload Profile Picture">
-                        <input type="submit" value="Update">
-                    
-                    </form>
+                <input type="text" name="name" placeholder="Your Name" value="<%= profile_user.name %>"   required>
+                <input type="email" name="email" placeholder="xyz@gmail.com"  value="<%= profile_user.email %>" required> 
+                                        
+                <input type="file" name="avatar" placeholder="Upload Profile Picture">
+                <input type="submit" value="Update">
+                                    
+                </form>
 
 
-         <%}else {%>
-        <p> <%= profile_user.name%></p>
-        <p> <%= profile_user.email%></p>
+        <%}
+        
+        else {%>
+        <!-- <div class="others-profile-view"> -->
+        
+        <p class="others-profile"> <%= profile_user.name%></p>
+        <p class="others-profile"> <%= profile_user.email%></p>
+        
+        <a class="add-friend" href="/users/friends/?from=<%=user._id%>&to=<%=profile_user._id%>">Add Friend/Remove Friend</a>
+      
         <%}%>
+     <!-- </div>  -->
+      
+
+</div>
+</div>
 
 
-        <!-- <form action="/users/session-out" method="Post">
-                <!-- <input type="email" name="email" placeholder="xyz@gmail.com" required>
-                <input type="password" name="password" placeholder="Your Password" required> -->
-                <!-- <input type="submit" value="Sign Out">
-            
-            </form> 
 
+</body>
+</html>

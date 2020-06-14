@@ -3,7 +3,7 @@ const http=require('http');
 const logger = require('morgan');
 const app=express();
 
-require('./config/view-helpers')(app);
+//require('./config/view-helpers')(app);
 
 const morgan = require('morgan');
 const env= require('./config/environment');
@@ -48,7 +48,7 @@ if(env.name=='development'){
     }));
 
 }
-
+app.use(express.static(path.join(__dirname,env.asset_path)));
 
 const User=require('./models/user');
 
@@ -58,7 +58,7 @@ const User=require('./models/user');
 
 app.use(express.urlencoded());
 app.use(cookieParser());
-app.use(express.static(env.asset_path));
+
 
 // make the uploaded path to the browser (avatar photos path to upload on the browser)
 app.use('/uploads',express.static(__dirname +'/uploads'));

@@ -1,14 +1,131 @@
-<h1>codeail | Sign Up</h1>
 
-<form action="/users/create" method="Post">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="xyz@gmail.com" required>
-    <input type="password" name="password" placeholder="Your Password" required>
-    <input type="password" name="confirm_password" placeholder="Confirm password" required>
-    <input type="submit" value="Sign Up">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  <script src="https://kit.fontawesome.com/38d263e213.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/user_sign_up.css">
+</head>
+<body>
 
+  <nav>
+  
+    <div class="topnav">    
+             <a href="/users/sign-In"> sign In </a>
+             <a href="/users/sign-Up"> sign Up </a>
+    </div>
+     
+  </nav>
+
+  <main>
+
+ <div class="container row">
+        <div class="login-column column">
+         
+            <h1>
+              Codeial sign-Up Page <i class="fa fa-sign-in" aria-hidden="true"></i>
+            </h1>
+       
+
+            <div class="login-image">
+              <img src="../images/sign_up.jpg" width="500" height="600"/>
+            </div>
+          
+        </div>
+
+        <div class="column sign-up-col">
+          <div class="sign-up-form">   
+
+            <div >
+              <form action="/users/create" method="Post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="xyz@gmail.com" required>
+                <input type="password" name="password" placeholder="Your Password" required>
+                <input type="password" name="confirm_password" placeholder="Confirm password" required>
+                <input type="submit" value="Sign Up">
+            
+            </form> 
+            </div>
+  
+      
+  
+          <div>
+            <a href="/users/auth/google" class="google btn">
+              <i class="fa fa-google fa-fw"></i> Login with Google+
+            </a>
+          </div>
+
+  
+          </div>
+  
+        </div>
+  
+        </div>
+
+              
+  </main>
+       
+
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/user_sign_up.css">
+  </head>
+  <body>
+  
+    
+    <div >
+        <h1 style="text-align:center"><h1>codeail | Sign Up <i class="fa fa-sign-in" aria-hidden="true"></i></h1>
+          </h1>
+      
+      </div>
+        <div class="row">
+          <div class="column">
+          <img src="../images/sign_up.jpg" width="500" height="600"/>
+          </div>
+
+    <div class="column sign-up-form">         
+        <div >
+            <form action="/users/create" method="Post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="xyz@gmail.com" required>
+                <input type="password" name="password" placeholder="Your Password" required>
+                <input type="password" name="confirm_password" placeholder="Confirm password" required>
+                <input type="submit" value="Sign Up">
+            
+            </form> 
+        </div>
+        <div>
+
+          <a href="/users/auth/google" class="google btn">
+            <i class="fa fa-google fa-fw"></i> Login with Google+
+          </a>
+        </div>
+
+  
+    </div>
+       
+      </div>
+   <div class="container">
+    <form action="/users/create" method="Post">
+        
+
+      
 </form>
+</body>
+</html> -->
 
-<p>
-    <a href="/users/auth/google">Google Sign In/Sign Up</a>
-</p>
+

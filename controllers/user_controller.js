@@ -1,6 +1,7 @@
  const User=require('../models/user');
  const fs=require('fs');
  const path = require('path');
+ const Friendship=require('../models/friendship')
 
 module.exports.profile=function(req,res){
     User.findById(req.params.id,function(err,user){
@@ -29,7 +30,11 @@ module.exports.update=async function(req,res){
                 if(req.file){
 
                     if(user.avatar){
-                        fs.unlinkSync(__dirname, '..' , user.avatar);
+                        if(fs.existsSync(path.join(__dirname,"..",user.avatar)))
+                        {
+                            fs.unlinkSync(path.join(__dirname, '..' , user.avatar));
+                        }
+                        
                     }
                     user.avatar=User.avatarPath+'/'+req.file.filename;
                 }
@@ -109,4 +114,52 @@ module.exports.destroySession=function(req,res){
     req.logout();
     req.flash('success' , 'You have Logged Out');
     return res.redirect('/');
+}
+
+module.exports.makeFriendShip=async function(req,res)
+{
+    try{
+        //friends/?from=logged.id&to=jiski_profile._id
+        let fromUser=await User.findById(req.query.from);
+        let toUser=await User.findById(req.query.to);
+        let newFriendshipFrom=await Friendship.findOne({
+            fromUser:req.query.from,
+            toUser:req.query.to
+        });
+        let newFriendshipTo=await Friendship.findOne({
+            fromUser:req.query.to,
+            toUser:req.query.from
+        });
+        if(!newFriendshipFrom)
+        {
+            let newFriendshipFrom=await Friendship.create({
+                fromUser:req.query.from,
+                toUser:req.query.to
+            });
+            let newFriendshipTo=await Friendship.create({
+                fromUser:req.query.to,
+                toUser:req.query.from
+            });
+            fromUser.friendships.push(newFriendshipFrom);
+            fromUser.save();
+            toUser.friendships.push(newFriendshipTo);
+            toUser.save();
+        }
+        else
+        {
+            fromUser.friendships.pull(newFriendshipFrom);
+            fromUser.save();
+            toUser.friendships.pull(newFriendshipTo);
+            toUser.save();
+            newFriendshipFrom.remove();
+            newFriendshipTo.remove();
+        }
+      
+        return res.redirect("back");
+    }
+    catch(err)
+    {
+        console.log("error in making friendship ",err);
+        return;
+    }
 }

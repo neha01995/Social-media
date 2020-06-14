@@ -1,25 +1,40 @@
-<li>
-    <p>
-        <% if(locals.user && locals.user.id==comment.user.id) {%>
-            <small>
-                <a href="/comments/destroy/<%= comment.id %>">X</a>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/38d263e213.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/_comment.css">
+</head>
+<body> -->
+
+    <li>
+        <p>
+            <% if(locals.user && locals.user.id==comment.user.id) {%>
+                <small>
+                    <a href="/comments/destroy/<%= comment.id %>">X</a>
+                </small>
+            <%}%>
+            <%= comment.content %>
+            <br>
+            <small class="comment-user-name">
+              <h1>  <%= comment.user.name %> </h1>
             </small>
-        <%}%>
-        <%= comment.content %>
-        <br>
-        <small>
-            <%= comment.user.name %>
-        </small>
-        
-        <!-- display likes for comment -->
-        <small>
-            <% if (locals.user){%>
-             <a class="toggle-like-button" data-likes="<%=comment.likes.length%>" href="/likes/toggle/?id=<%=comment._id%>&type=Comment">
-             <%=comment.likes.length %> Likes
-             </a>
-         <%}else{%>
-           <%=comment.likes.length%> Likes
-         <%}%>
-        </small>
-    </p>
-</li>
+            
+            <!-- display likes for comment -->
+            <small>
+                <% if (locals.user){%>
+                 <a class="toggle-like-button" data-likes="<%=comment.likes.length%>" href="/likes/toggle/?id=<%=comment._id%>&type=Comment">
+                 <%=comment.likes.length %> Likes
+                 </a>
+             <%}else{%>
+               <%=comment.likes.length%> 
+             <%}%>
+            </small>
+        </p>
+    </li>
+    
+<!-- </body>
+</html> -->
+
+

@@ -1,7 +1,37 @@
 <header>
-    page header
+    <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <link rel="stylesheet" href="/css/header.css"> -->
+
+</head>
+<body>
+
+<div class="topnav">
+    <% if (locals.user) {%>
+        <!-- <a class="active" href="/users/profile">Your's Profile</a> -->
+        <a href="/users/profile">Profile Page</a>
+            <%= user.name %>
+         <a href="/users/sign-Out"> sign Out </a>
+
+    <% } else{%>
+         <a href="/users/sign-In"> sign In </a>
+         <a href="/users/sign-Up"> sign Up </a>
+
+        <%} %>
+ 
+  
+</div>
+
+<div style="padding-left:16px">
+  
+</div>
+
+</body>
+</html>
     
-    <ul>
+    <!-- <ul>
         <% if (locals.user) {%>
             <li> 
                 <a href="/users/profile">
@@ -14,7 +44,7 @@
 
             <%} %>
 
-    </ul>
+    </ul> -->
 
 
 </header>

@@ -1,10 +1,23 @@
+.chat-container {
+  width: 25%;
+  background-color: grey; }
+  .chat-container h1 {
+    padding: 40px;
+    font-size: 35px;
+    margin-right: 10px; }
+  .chat-container .image {
+    margin-left: 120px;
+    margin-bottom: 70px;
+    justify-content: center;
+    align-items: center; }
+
 #user-chat-box {
   position: fixed;
   bottom: 10px;
   right: 10px;
   border: 1px dashed grey;
   height: 350px;
-  background: white;
+  background: darkslateblue;
   padding: 5px;
   box-shadow: 1px 1px 1px 1px lightblue; }
   #user-chat-box #chat-messages-list {
